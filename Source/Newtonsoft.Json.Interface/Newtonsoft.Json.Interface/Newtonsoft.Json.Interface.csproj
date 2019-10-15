@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>Ms-PL</PackageLicenseExpression>
+    <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/porrey/Newtonsoft.Json.Interface</PackageProjectUrl>
     <RepositoryUrl>https://github.com/porrey/Newtonsoft.Json.Interface</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -16,6 +16,7 @@
     <Product>Json.NET Interface Converter/Mapper</Product>
     <Description>The Json.NET Interface Converter/Mapper is a JsonConverter attribute that allows interfaces to be mapped to concrete implementations of those interfaces for use when deserializing an object.</Description>
     <PackageIconUrl>https://github.com/porrey/Newtonsoft.Json.Interface/raw/master/Images/nugeticon.png</PackageIconUrl>
+    <ApplicationIcon></ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
