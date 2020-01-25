@@ -1,14 +1,87 @@
 # Newtonsoft.Json.Interface
 The Json.NET Interface Converter/Mapper is a JsonConverter attribute that allows interfaces to be mapped to concrete implementations of those interfaces for use when deserializing an object.
 
-## Using the atrribute
-Place the attribute over the interface definition and specify the class to be used
-for deserialiszation.
+This is useful when retrieving objects from a container that does not have access to the concrete implementation, but those objects need to be serialized and deserialized using he interface.
 
-```/// <summary>
-/// Specifies that the an object serialized as IUser should be
-/// deserialized into an instance of User.
-/// </summary>
-[JsonConverter(typeof(InterfaceToConcreteConverter<IUser, User>))]
-public interface IUser : IUser<string>
-{
+## Using the attribute
+Place the attribute over the interface definition and specify the class to be used
+for deserialization.
+
+## Basic Usage
+
+Place an attribute over the interface to define the concrete class to use when deserializing objects with the given interface.
+
+	/// <summary>
+	/// Specifies that the an object serialized as IUser should be
+	/// deserialized into an instance of User.
+	/// </summary>
+	[JsonConverter(typeof(InterfaceToConcreteConverter<IUser, User>))]
+	public interface IUser : IUser<string>
+	{
+
+## Example
+
+Define an interface as shown below.
+
+	public interface IMyModel
+	{
+		string Description { get; set; }
+		int Id { get; set; }
+		string Name { get; set; }
+	}
+
+Create a concrete implementation for the interface.
+
+	public class MyModel : IMyModel
+	{
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public string Description { get; set; }
+	}
+
+Create an array of objects using the interface and then serialize the array to a JSON string.
+
+	IMyModel[] models = new MyModel[]
+	{
+		new MyModel()
+		{
+			Id = 1,
+			Name = "Model 1",
+			Description = "My new model 1."
+		},
+		new MyModel()
+		{
+			Id = 2,
+			Name = "Model 2",
+			Description = "My new model 2."
+		},
+		new MyModel()
+		{
+			Id = 3,
+			Name = "Model 3",
+			Description = "My new model 3."
+		},
+	};
+	
+	string json = JsonConvert.SerializeObject(models);
+
+An attempt to deserialize the above array without the attribute would result in the error shown below.
+
+![](https://github.com/porrey/Newtonsoft.Json.Interface/raw/master/Images/ScreenShot.png)
+
+Now go back and add the attribute to the interface definition.
+
+	[JsonConverter(typeof(InterfaceToConcreteConverter<IMyModel, MyModel>))]
+	public interface IMyModel
+	{
+		string Description { get; set; }
+		int Id { get; set; }
+		string Name { get; set; }
+	}
+
+With the attribute on the the interface, the below code would run perfectly. Note that the interface is used in the call to **JsonConvert.DeserializeObject** and not the concrete class reference.
+
+	// ***
+	// *** Deserialize the items as a list of interfaces.
+	// ***
+	IEnumerable<IMyModel> deserializedItems = JsonConvert.DeserializeObject<IEnumerable<IMyModel>>(json);
