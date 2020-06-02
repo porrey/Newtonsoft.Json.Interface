@@ -4,13 +4,10 @@
 		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1</TargetFrameworks>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageLicenseExpression>MS-PL</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/porrey/Newtonsoft.Json.Interface</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/porrey/Newtonsoft.Json.Interface</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<AssemblyVersion>2.1.0</AssemblyVersion>
-		<FileVersion>2.1.0</FileVersion>
-		<Version>2.1.0</Version>
+		<Version>2.2.0</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Json.NET Interface Converter/Mapper</Product>
@@ -20,17 +17,27 @@
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>dispose.png</PackageIcon>
 		<Copyright>Copyright © 2014-2020 Daniel M. Porrey</Copyright>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub"
+											Version="1.0.0"
+											PrivateAssets="all"/>
+		<PackageReference Include="Newtonsoft.Json"
+											Version="12.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\..\..\System.DisposableObject\Image\dispose.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	  </None>
+		<None Include="..\..\..\..\System.DisposableObject\Image\dispose.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>

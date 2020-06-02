@@ -13,19 +13,18 @@
 // *** 
 // *** You should have received a copy of the GNU Lesser General Public License
 // *** along with this program. If not, see http://www.gnu.org/licenses/.
-// *** 
+// ***
 using System;
 using Newtonsoft.Json.Linq;
 
-namespace Newtonsoft.Json
+namespace Newtonsoft.Json.Interface
 {
 	/// <summary>
-	/// This convert can be used on any interface definition to instruct the JSON
-	/// serializer to use a specific concrete class when deserializing the instance.
+	/// Provides direction to the serializer and deserializer to use
+	/// specific concrete class.
 	/// </summary>
-	/// <typeparam name="TInterface">The Type that was serialized into the JSON text.</typeparam>
-	/// <typeparam name="TConcrete">The Type that specifies the class that will be created.</typeparam>
-	public class InterfaceToConcreteConverter<TInterface, TConcrete> : JsonConverter
+	/// <typeparam name="TConcrete"></typeparam>
+	public class ConcreteConverter<TConcrete> : JsonConverter
 	{
 		/// <summary>
 		/// Determines whether this instance can convert the specified object type.
@@ -34,7 +33,7 @@ namespace Newtonsoft.Json
 		/// <returns>Returns true if this instance can convert the specified object type, false otherwise.</returns>
 		public override bool CanConvert(Type objectType)
 		{
-			return (objectType == typeof(TInterface));
+			return (objectType == typeof(TConcrete));
 		}
 
 		/// <summary>
@@ -56,7 +55,7 @@ namespace Newtonsoft.Json
 		{
 			get
 			{
-				return false;
+				return true;
 			}
 		}
 
@@ -72,25 +71,22 @@ namespace Newtonsoft.Json
 		{
 			object returnValue = null;
 
-			if (objectType == typeof(TInterface))
+			// ***
+			// *** Create the concrete type
+			// ***
+			returnValue = Activator.CreateInstance<TConcrete>();
+
+			// ***
+			// *** Deserialize the object to a temporary instance
+			// ***
+			JObject jsonObject = JObject.Load(reader);
+
+			using (JsonReader serializerReader = jsonObject.CreateReader())
 			{
 				// ***
-				// *** Create the concrete type
+				// *** Populate the object
 				// ***
-				returnValue = Activator.CreateInstance<TConcrete>();
-
-				// ***
-				// *** Deserialize the object to a temporary instance
-				// ***
-				JObject jsonObject = JObject.Load(reader);
-
-				using (JsonReader serializerReader = jsonObject.CreateReader())
-				{
-					// ***
-					// *** Populate the object
-					// ***
-					serializer.Populate(serializerReader, returnValue);
-				}
+				serializer.Populate(serializerReader, returnValue);
 			}
 
 			return returnValue;
@@ -105,11 +101,9 @@ namespace Newtonsoft.Json
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
 			// ***
-			// *** This method will not be called because CanWrite is returning false. JSON.Net
-			// *** will use default logic to serial the object. This is Ok because it will never
-			// *** be given an instance of an interface; only concrete classes
+			// *** Use the given serialize to perform serialization.
 			// ***
-			throw new NotSupportedException();
+			serializer.Serialize(writer, value);
 		}
 	}
 }
