@@ -1,6 +1,6 @@
-﻿namespace Example
+﻿namespace Newtonsoft.Json.Interface.Tests
 {
-	public class MyModel : IMyModel
+	public class TestModel : ITestModel
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }

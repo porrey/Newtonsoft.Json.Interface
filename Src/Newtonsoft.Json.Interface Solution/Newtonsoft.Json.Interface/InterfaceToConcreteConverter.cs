@@ -21,7 +21,7 @@ namespace Newtonsoft.Json
 {
 	/// <summary>
 	/// This convert can be used on any interface definition to instruct the JSON
-	/// serializer to use a specific concrete class when de-serializing the instance.
+	/// serializer to use a specific concrete class when deserializing the instance.
 	/// </summary>
 	/// <typeparam name="TInterface">The Type that was serialized into the JSON text.</typeparam>
 	/// <typeparam name="TConcrete">The Type that specifies the class that will be created.</typeparam>
@@ -38,7 +38,7 @@ namespace Newtonsoft.Json
 		}
 
 		/// <summary>
-		/// Gets a value indicating whether this Newtonsoft.Json.JsonConverter can read.
+		/// Gets a value indicating whether this <see cref="JsonConverter"/> can read.
 		/// </summary>
 		public override bool CanRead
 		{
@@ -49,7 +49,7 @@ namespace Newtonsoft.Json
 		}
 
 		/// <summary>
-		/// Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write
+		/// Gets a value indicating whether this <see cref="JsonConverter"/> can write
 		/// JSON.
 		/// </summary>
 		public override bool CanWrite
@@ -63,7 +63,7 @@ namespace Newtonsoft.Json
 		/// <summary>
 		/// Reads the JSON representation of the object.
 		/// </summary>
-		/// <param name="reader">The Newtonsoft.Json.JsonReader to read from.</param>
+		/// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
 		/// <param name="objectType">Type of the object.</param>
 		/// <param name="existingValue">The existing value of object being read.</param>
 		/// <param name="serializer">The calling serializer.</param>
@@ -99,7 +99,7 @@ namespace Newtonsoft.Json
 		/// <summary>
 		/// Writes the JSON representation of the object.
 		/// </summary>
-		/// <param name="writer">The Newtonsoft.Json.JsonWriter to write to.</param>
+		/// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
 		/// <param name="value">The value.</param>
 		/// <param name="serializer">The calling serializer.</param>
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
