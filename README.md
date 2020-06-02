@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/travis/porrey/Newtonsoft.Json.Interface/master?style=for-the-badge)](https://travis-ci.com/porrey/Newtonsoft.Json.Interface)
+![Travis (.com) branch](https://img.shields.io/travis/com/porrey/Newtonsoft.Json.Interface/master?style=for-the-badge)
 
 [![Nuget](https://img.shields.io/nuget/v/Newtonsoft.Json.Interface?label=Newtonsoft%2EJson.Interface%20-%20NuGet&style=for-the-badge)
 ![Nuget](https://img.shields.io/nuget/dt/Newtonsoft.Json.Interface?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Newtonsoft.Json.Interface/)
