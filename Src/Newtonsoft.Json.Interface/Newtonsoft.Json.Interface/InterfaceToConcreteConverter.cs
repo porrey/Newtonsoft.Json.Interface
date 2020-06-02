@@ -20,7 +20,7 @@ using Newtonsoft.Json.Linq;
 namespace Newtonsoft.Json
 {
 	/// <summary>
-	/// This convert can be sued on any interface definition to instruct the JSON
+	/// This convert can be used on any interface definition to instruct the JSON
 	/// serializer to use a specific concrete class when de-serializing the instance.
 	/// </summary>
 	/// <typeparam name="TInterface">The Type that was serialized into the JSON text.</typeparam>
