@@ -14,6 +14,8 @@ for deserialization.
 
 ## Basic Usage
 
+### Model Conversion
+
 Place an attribute over the interface to define the concrete class to use when deserializing objects with the given interface.
 
 	/// <summary>
@@ -24,7 +26,24 @@ Place an attribute over the interface to define the concrete class to use when d
 	public interface IUser : IUser<string>
 	{
 
+### Model Property Conversion
+
+Place an  attribute over a model property that uses an interface as the type as shown below.
+
+    public class TestPropertyModel
+    {
+        public int Id { get; set; }
+        public string Comment { get; set; }
+    
+        [JsonConverter(typeof(ConcreteConverter<TestModel>))]
+        public ITestModel Model { get; set; }
+    }
+
 ## Example
+
+### Model Conversion
+
+This example shows how to use the attribute on an interface to direct deserialization to a specific model or entity.
 
 Define an interface as shown below.
 
