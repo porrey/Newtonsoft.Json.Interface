@@ -77,6 +77,30 @@ namespace Newtonsoft.Json.Interface.Tests
 			});
 		}
 
+		[Test(Author = "Daniel M. Porrey", Description = "Ensures and null object implementing an interface is deserialized properly by that interface.")]
+		public void NullModelConversionTest()
+		{
+			// ***
+			// *** Create the model.
+			// ***
+			TestModel model1 = null;
+
+			// ***
+			// *** Serialize the model.
+			// ***
+			string json = JsonConvert.SerializeObject(model1);
+
+			// ***
+			// *** Serialize the model using the interface.
+			// ***
+			ITestModel model2 = JsonConvert.DeserializeObject<ITestModel>(json);
+
+			// ***
+			// *** Check the model.
+			// ***
+			Assert.IsNull(model2);
+		}
+
 		[Test(Author = "Daniel M. Porrey", Description = "Ensures that a property of a model with a interface type can be deserialized.")]
 		public void PropertyConversionTest()
 		{
@@ -116,6 +140,40 @@ namespace Newtonsoft.Json.Interface.Tests
 				Assert.AreEqual(1, model2.Model.Id);
 				Assert.AreEqual("Model1", model2.Model.Name);
 				Assert.AreEqual("Model 1", model2.Model.Description);
+			});
+		}
+
+		[Test(Author = "Daniel M. Porrey", Description = "Ensures that a property of a model with a interface type can be deserialized from null.")]
+		public void PropertyConversionNullTest()
+		{
+			// ***
+			// *** Create the model.
+			// ***
+			TestPropertyModel model1 = new TestPropertyModel()
+			{
+				Id = 11,
+				Comment = "This is a test.",
+				Model = null
+			};
+
+			// ***
+			// *** Serialize the model.
+			// ***
+			string json = JsonConvert.SerializeObject(model1);
+
+			// ***
+			// *** Serialize the model using the interface.
+			// ***
+			TestPropertyModel model2 = JsonConvert.DeserializeObject<TestPropertyModel>(json);
+
+			// ***
+			// *** Check the model.
+			// ***
+			Assert.Multiple(() =>
+			{
+				Assert.AreEqual(11, model2.Id);
+				Assert.AreEqual("This is a test.", model2.Comment);
+				Assert.IsNull(model2.Model);
 			});
 		}
 	}

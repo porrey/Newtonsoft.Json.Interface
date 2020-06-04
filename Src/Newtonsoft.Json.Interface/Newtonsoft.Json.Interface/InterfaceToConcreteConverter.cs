@@ -75,21 +75,27 @@ namespace Newtonsoft.Json
 			if (objectType == typeof(TInterface))
 			{
 				// ***
-				// *** Create the concrete type
+				// *** Deserialize the object to a temporary instance
 				// ***
-				returnValue = Activator.CreateInstance<TConcrete>();
-
 				// ***
 				// *** Deserialize the object to a temporary instance
 				// ***
-				JObject jsonObject = JObject.Load(reader);
+				JToken jsonToken = JToken.Load(reader);
 
-				using (JsonReader serializerReader = jsonObject.CreateReader())
+				if (jsonToken is JObject || jsonToken is JArray)
 				{
 					// ***
-					// *** Populate the object
+					// *** Create the concrete type
 					// ***
-					serializer.Populate(serializerReader, returnValue);
+					returnValue = Activator.CreateInstance<TConcrete>();
+
+					using (JsonReader serializerReader = jsonToken.CreateReader())
+					{
+						// ***
+						// *** Populate the object
+						// ***
+						serializer.Populate(serializerReader, returnValue);
+					}
 				}
 			}
 
