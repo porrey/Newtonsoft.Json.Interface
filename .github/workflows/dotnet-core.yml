@@ -18,10 +18,10 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore ./src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln
+      run: dotnet restore ./Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln
     - name: Build
-      working-directory: ./src/Newtonsoft.Json.Interface
+      working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      working-directory: ./src/Newtonsoft.Json.Interface
+      working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet test --no-restore
