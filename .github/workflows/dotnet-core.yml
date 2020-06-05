@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      working-directory: /Src/Newtonsoft.Json.Interface
+      working-directory: /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface
       run: dotnet restore
     - name: Build
-      working-directory: /Src/Newtonsoft.Json.Interface
+      working-directory: /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface
       run: dotnet build --configuration Release --framework netcoreapp3.1
     - name: Test
-      working-directory: /Src/Newtonsoft.Json.Interface
+      working-directory: /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface
       run: dotnet test --framework netcoreapp3.1
