@@ -1,4 +1,4 @@
-name: .NET Core Build
+name: .NET Core Build/Test
 
 on:
   push:
@@ -18,8 +18,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln
+      working-directory: ./src
+      run: dotnet restore
     - name: Build
-      run: dotnet build /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln --configuration Release --framework netcoreapp3.1 --no-restore
+      working-directory: ./src
+      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test /porrey/Newtonsoft.Json.Interface/Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln --framework netcoreapp3.1 --no-restore
+      working-directory: ./src
+      run: dotnet test --no-restore
