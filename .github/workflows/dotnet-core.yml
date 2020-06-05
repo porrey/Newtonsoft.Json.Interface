@@ -20,6 +20,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln --configuration Release --framework netcoreapp3.1
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface-Solution.sln --framework netcoreapp3.1
