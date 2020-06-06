@@ -2,7 +2,6 @@ name: NuGet Publish
 
 on:
   push:
-    tags: v*
     branches: master
 
 jobs:
