@@ -2,13 +2,13 @@ name: NuGet Publish
 
 on:
   push:
-    tags: releases/v[1-9]+.[0-9]+.[0-9]+
+    tags: v*
     branches: master
 
 jobs:
   publish:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
       run: dotnet restore
     - name: Build
       working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet build --configuration Release --no-restore --framework netcoreapp3.1
+      run: dotnet build --configuration Release --no-restore
     - name: Create NuGet Package
       working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet pack --configuration Release --no-restore
