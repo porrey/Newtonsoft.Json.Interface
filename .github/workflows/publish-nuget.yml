@@ -23,6 +23,6 @@ jobs:
       working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet build --configuration Release --no-restore --framework netcoreapp3.1
     - name: Publish NuGet Package
-      working-directory: ./Src/Newtonsoft.Json.Interface/bin/Release
-      run: dotnet nuget push Newtonsoft.Json.Interface.?.?.?.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+      working-directory: ./Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface/bin/Release
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
     
