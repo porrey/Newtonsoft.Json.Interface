@@ -3,7 +3,7 @@ name: NuGet Publish
 on:
   release:
     branches: master
-    tags: v*
+    tags: v[0-9]+.[0-9]+.[0-9]+
     types: [published]
 
 jobs:
