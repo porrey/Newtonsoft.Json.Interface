@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
     - name: Build
       working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet build --configuration Release --no-restore --framework netcoreapp3.1
+      run: dotnet build --configuration Release --no-restore
     - name: Test
       working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet test --no-restore --framework netcoreapp3.1
