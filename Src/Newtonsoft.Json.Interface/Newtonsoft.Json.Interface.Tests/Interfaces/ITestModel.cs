@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-
-namespace Newtonsoft.Json.Interface.Tests
+﻿namespace Newtonsoft.Json.Interface.Tests
 {
 	/// <summary>
-	/// Specifies that the an object serialized as IUser should be
-	/// deserialized into an instance of User.
+	/// Specifies that the an object serialized as ITestModel should be
+	/// deserialized into an instance of TestModel.
 	/// </summary>
 	[JsonConverter(typeof(InterfaceToConcreteConverter<ITestModel, TestModel>))]
 	public interface ITestModel

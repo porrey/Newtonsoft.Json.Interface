@@ -7,7 +7,7 @@
 		<PackageProjectUrl>https://github.com/porrey/Newtonsoft.Json.Interface</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/porrey/Newtonsoft.Json.Interface</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>2.2.1</Version>
+		<Version>2.2.2</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Json.NET Interface Converter/Mapper</Product>
@@ -23,7 +23,19 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
+
+	<PropertyGroup>
+	  <DocumentationFile>Newtonsoft.Json.Interface.xml</DocumentationFile>
+	  <FileVersion>2.2.2</FileVersion>
+	  <AssemblyVersion>2.2.2</AssemblyVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Newtonsoft.Json.Interface.xml" />
+	  <None Remove="Thumbs.db" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
