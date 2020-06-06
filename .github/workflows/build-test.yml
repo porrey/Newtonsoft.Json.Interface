@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
     - name: Build
       working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
     - name: Test
       working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet test --no-restore --framework netcoreapp3.1
