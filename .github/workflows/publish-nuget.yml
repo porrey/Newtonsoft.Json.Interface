@@ -1,8 +1,10 @@
 name: NuGet Publish
 
 on:
-  push:
+  release:
     branches: master
+    tags: v*
+    types: [published]
 
 jobs:
   publish:
