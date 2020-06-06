@@ -1,7 +1,5 @@
 ![.NET Core Build/Test](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/.NET%20Core%20Build/Test/badge.svg) ![NuGet Publish](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/NuGet%20Publish/badge.svg)
 
-![Travis (.com) branch](https://img.shields.io/travis/com/porrey/Newtonsoft.Json.Interface/master?label=Travis%20CI%20Build)
-
 [![Nuget](https://img.shields.io/nuget/v/Newtonsoft.Json.Interface?label=Newtonsoft%2EJson.Interface%20-%20NuGet)
 ![Nuget](https://img.shields.io/nuget/dt/Newtonsoft.Json.Interface?label=Downloads)](https://www.nuget.org/packages/Newtonsoft.Json.Interface/)
 
