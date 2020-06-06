@@ -22,6 +22,8 @@ jobs:
     - name: Build
       working-directory: ./Src/Newtonsoft.Json.Interface
       run: dotnet build --configuration Release --no-restore --framework netcoreapp3.1
+    - name: Create NuGet Package
+      run: dotnet pack --configuration Release --no-restore
     - name: Publish NuGet Package
       working-directory: ./Src/Newtonsoft.Json.Interface/Newtonsoft.Json.Interface/bin/Release
       run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
