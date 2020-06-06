@@ -17,7 +17,7 @@
 using System;
 using Newtonsoft.Json.Linq;
 
-namespace Newtonsoft.Json.Interface
+namespace Newtonsoft.Json
 {
 	/// <summary>
 	/// Provides direction to the serializer and deserializer to use
@@ -25,6 +25,7 @@ namespace Newtonsoft.Json.Interface
 	/// </summary>
 	/// <typeparam name="TConcrete"></typeparam>
 	public class ConcreteConverter<TConcrete> : JsonConverter
+		where TConcrete : new()
 	{
 		/// <summary>
 		/// Determines whether this instance can convert the specified object type.
@@ -81,7 +82,7 @@ namespace Newtonsoft.Json.Interface
 				// ***
 				// *** Create the concrete type
 				// ***
-				returnValue = Activator.CreateInstance<TConcrete>();
+				returnValue = new TConcrete();
 
 				using (JsonReader serializerReader = jsonToken.CreateReader())
 				{

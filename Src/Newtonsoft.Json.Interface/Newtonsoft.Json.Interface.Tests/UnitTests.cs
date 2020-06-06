@@ -51,9 +51,9 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			DifferentTestModel model1 = new DifferentTestModel()
 			{
-				ModelId = 1,
-				ModelName = "Model1",
-				ModelDescription = "Model 1"
+				DifferentId = 1,
+				DifferentName = "Model1",
+				DifferentDescription = "Model 1"
 			};
 
 			// ***

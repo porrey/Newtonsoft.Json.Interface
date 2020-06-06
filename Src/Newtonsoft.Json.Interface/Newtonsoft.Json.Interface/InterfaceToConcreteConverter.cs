@@ -13,7 +13,7 @@
 // *** 
 // *** You should have received a copy of the GNU Lesser General Public License
 // *** along with this program. If not, see http://www.gnu.org/licenses/.
-// *** 
+// ***
 using System;
 using Newtonsoft.Json.Linq;
 
@@ -22,10 +22,13 @@ namespace Newtonsoft.Json
 	/// <summary>
 	/// This convert can be used on any interface definition to instruct the JSON
 	/// serializer to use a specific concrete class when deserializing the instance.
+	/// The type specified by TConcrete must implement the interface specified by
+	/// TInterface.
 	/// </summary>
 	/// <typeparam name="TInterface">The Type that was serialized into the JSON text.</typeparam>
 	/// <typeparam name="TConcrete">The Type that specifies the class that will be created.</typeparam>
 	public class InterfaceToConcreteConverter<TInterface, TConcrete> : JsonConverter
+	where TConcrete : TInterface, new()
 	{
 		/// <summary>
 		/// Determines whether this instance can convert the specified object type.
@@ -84,7 +87,7 @@ namespace Newtonsoft.Json
 					// ***
 					// *** Create the concrete type
 					// ***
-					returnValue = Activator.CreateInstance<TConcrete>();
+					returnValue = new TConcrete();
 
 					using (JsonReader serializerReader = jsonToken.CreateReader())
 					{
