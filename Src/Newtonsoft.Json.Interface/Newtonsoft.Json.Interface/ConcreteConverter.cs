@@ -74,9 +74,6 @@ namespace Newtonsoft.Json.Interface
 			// ***
 			// *** Deserialize the object to a temporary instance
 			// ***
-			// ***
-			// *** Deserialize the object to a temporary instance
-			// ***
 			JToken jsonToken = JToken.Load(reader);
 
 			if (jsonToken is JObject || jsonToken is JArray)
