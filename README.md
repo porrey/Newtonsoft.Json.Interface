@@ -1,4 +1,4 @@
-![.NET Core Build/Test](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/.NET%20Core%20Build/Test/badge.svg)
+![.NET Core Build/Test](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/.NET%20Core%20Build/Test/badge.svg) ![NuGet Publish](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/NuGet%20Publish/badge.svg)
 
 ![Travis (.com) branch](https://img.shields.io/travis/com/porrey/Newtonsoft.Json.Interface/master)
 
