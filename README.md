@@ -1,3 +1,5 @@
+![GitHub](https://img.shields.io/github/license/porrey/Newtonsoft.Json.Interface)
+
 ![.NET Core Build/Test](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/.NET%20Core%20Build/Test/badge.svg) ![NuGet Publish](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/NuGet%20Publish/badge.svg)
 
 [![Nuget](https://img.shields.io/nuget/v/Newtonsoft.Json.Interface?label=Newtonsoft%2EJson.Interface%20-%20NuGet)
