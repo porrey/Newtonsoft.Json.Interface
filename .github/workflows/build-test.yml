@@ -25,7 +25,7 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test
       working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet test --no-restore --framework netcoreapp3.1
+      run: dotnet test --no-restore --framework net6.0
     - name: Create NuGet Package
       # Ensures the package can be built.
       working-directory: ./Src/Newtonsoft.Json.Interface
