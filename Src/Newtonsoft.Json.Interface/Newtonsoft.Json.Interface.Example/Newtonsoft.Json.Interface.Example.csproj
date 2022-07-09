@@ -1,15 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<Version>2.2.1</Version>
-		<Version>2.2.2</Version>
-		<FileVersion>2.2.2</FileVersion>
-		<AssemblyVersion>2.2.2</AssemblyVersion>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>2.2.3</Version>
+		<FileVersion>2.2.3</FileVersion>
+		<AssemblyVersion>2.2.3</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Newtonsoft.Json.Interface\Newtonsoft.Json.Interface.csproj" />

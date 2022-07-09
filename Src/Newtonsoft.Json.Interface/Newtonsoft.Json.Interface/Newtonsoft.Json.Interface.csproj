@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1</TargetFrameworks>
+		<TargetFrameworks>net5.0;net6.0;netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1</TargetFrameworks>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageProjectUrl>https://github.com/porrey/Newtonsoft.Json.Interface</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/porrey/Newtonsoft.Json.Interface</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>2.2.2</Version>
+		<Version>2.2.3</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Json.NET Interface Converter/Mapper</Product>
@@ -16,7 +16,7 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>nugeticon.png</PackageIcon>
-		<Copyright>Copyright © 2014-2020 Daniel M. Porrey</Copyright>
+		<Copyright>Copyright © 2014-2022 Daniel M. Porrey</Copyright>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -28,8 +28,8 @@
 
 	<PropertyGroup>
 	  <DocumentationFile>Newtonsoft.Json.Interface.xml</DocumentationFile>
-	  <FileVersion>2.2.2</FileVersion>
-	  <AssemblyVersion>2.2.2</AssemblyVersion>
+	  <FileVersion>2.2.3</FileVersion>
+	  <AssemblyVersion>2.2.3</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -38,8 +38,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
