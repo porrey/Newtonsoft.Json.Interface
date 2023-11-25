@@ -1,32 +1,31 @@
-name: .NET Core Build/Test
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "main" ]
 
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
-    - name: Install dependencies
-      working-directory: ./Src/Newtonsoft.Json.Interface
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
       run: dotnet restore
+      working-directory: Src
     - name: Build
-      working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet build --configuration Release
+      run: dotnet build --no-restore
+      working-directory: Src
     - name: Test
-      working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet test --no-restore --framework net6.0
-    - name: Create NuGet Package
-      # Ensures the package can be built.
-      working-directory: ./Src/Newtonsoft.Json.Interface
-      run: dotnet pack --configuration Release --no-restore
+      run: dotnet test --no-build --verbosity normal
+      working-directory: Src
