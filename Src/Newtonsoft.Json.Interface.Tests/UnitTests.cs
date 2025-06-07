@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace Newtonsoft.Json.Interface.Tests
@@ -37,9 +38,9 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			Assert.Multiple(() =>
 			{
-				Assert.AreEqual(1, model2.Id);
-				Assert.AreEqual("Model1", model2.Name);
-				Assert.AreEqual("Model 1", model2.Description);
+				Assert.That(Is.Equals(1, model2.Id));
+				Assert.That(Is.Equals("Model1", model2.Name));
+				Assert.That(Is.Equals("Model 1", model2.Description));
 			});
 		}
 
@@ -71,9 +72,9 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			Assert.Multiple(() =>
 			{
-				Assert.AreEqual(0, model2.Id);
-				Assert.IsNull(model2.Name);
-				Assert.IsNull(model2.Description);
+				Assert.That(Is.Equals(0, model2.Id));
+				Assert.That(model2.Name, Is.Null);
+				Assert.That(model2.Description, Is.Null);
 			});
 		}
 
@@ -98,7 +99,7 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			// *** Check the model.
 			// ***
-			Assert.IsNull(model2);
+			Assert.That(model2, Is.Null);
 		}
 
 		[Test(Author = "Daniel M. Porrey", Description = "Ensures that a property of a model with a interface type can be deserialized.")]
@@ -134,12 +135,12 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			Assert.Multiple(() =>
 			{
-				Assert.AreEqual(11, model2.Id);
-				Assert.AreEqual("This is a test.", model2.Comment);
-				Assert.IsNotNull(model2.Model);
-				Assert.AreEqual(1, model2.Model.Id);
-				Assert.AreEqual("Model1", model2.Model.Name);
-				Assert.AreEqual("Model 1", model2.Model.Description);
+				Assert.That(Is.Equals(11, model2.Id));
+				Assert.That(Is.Equals("This is a test.", model2.Comment));
+				Assert.That(model2.Model, Is.Not.Null);
+				Assert.That(Is.Equals(1, model2.Model.Id));
+				Assert.That(Is.Equals("Model1", model2.Model.Name));
+				Assert.That(Is.Equals("Model 1", model2.Model.Description));
 			});
 		}
 
@@ -171,9 +172,9 @@ namespace Newtonsoft.Json.Interface.Tests
 			// ***
 			Assert.Multiple(() =>
 			{
-				Assert.AreEqual(11, model2.Id);
-				Assert.AreEqual("This is a test.", model2.Comment);
-				Assert.IsNull(model2.Model);
+				Assert.That(Is.Equals(11, model2.Id));
+				Assert.That(Is.Equals("This is a test.", model2.Comment));
+				Assert.That(model2.Model, Is.Null);
 			});
 		}
 	}
