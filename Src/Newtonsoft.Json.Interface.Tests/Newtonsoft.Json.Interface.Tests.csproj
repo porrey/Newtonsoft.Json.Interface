@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-		<Version>8.0.1</Version>
-    <IsPackable>false</IsPackable>
-    <FileVersion>8.0.1</FileVersion>
-    <AssemblyVersion>8.0.1</AssemblyVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Version>9.0.0</Version>
+		<IsPackable>false</IsPackable>
+		<FileVersion>9.0.0</FileVersion>
+		<AssemblyVersion>9.0.0</AssemblyVersion>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="NUnit" Version="3.14.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="NUnit" Version="4.3.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Newtonsoft.Json.Interface\Newtonsoft.Json.Interface.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Newtonsoft.Json.Interface\Newtonsoft.Json.Interface.csproj" />
+	</ItemGroup>
 
 </Project>
