@@ -1,7 +1,7 @@
-![GitHub](https://img.shields.io/github/license/porrey/Newtonsoft.Json.Interface) ![.NET Core Build/Test](https://github.com/porrey/Newtonsoft.Json.Interface/workflows/.NET%20Core%20Build/Test/badge.svg)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/porrey/Newtonsoft.Json.Interface/.github/workflows/dotnet.yml?style=for-the-badge)
 
-[![Nuget](https://img.shields.io/nuget/v/Newtonsoft.Json.Interface?label=Newtonsoft%2EJson.Interface%20-%20NuGet)
-![Nuget](https://img.shields.io/nuget/dt/Newtonsoft.Json.Interface?label=Downloads)](https://www.nuget.org/packages/Newtonsoft.Json.Interface/)
+[![Nuget](https://img.shields.io/nuget/v/Newtonsoft.Json.Interface?label=Newtonsoft.Json.Interface%20-%20NuGet&style=for-the-badge)
+![Nuget](https://img.shields.io/nuget/dt/Newtonsoft.Json.Interface?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Newtonsoft.Json.Interface/)
 
 # Newtonsoft.Json.Interface
 The Json.NET Interface Converter/Mapper is a JsonConverter attribute that allows interfaces to be mapped to concrete implementations of those interfaces for use when deserializing an object.
